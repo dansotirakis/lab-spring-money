@@ -18,6 +18,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+/* 
+ *	@author Damianos Sotirakis
+ * 
+ * Classe criada para capturar e tratar excessões nos processos HTTP envolvendo entidades
+ * 
+ * */
+
 @ControllerAdvice
 public class AlgamoneyExceptionHandler extends ResponseEntityExceptionHandler {
 
