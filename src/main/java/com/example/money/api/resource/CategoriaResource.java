@@ -2,7 +2,9 @@ package com.example.money.api.resource;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,26 +27,28 @@ public class CategoriaResource {
 
 	@Autowired
 	private CategoriaRepository categoriaRepository;
-	
-	@GetMapping
-	public List<Categoria> listar(){
-		return categoriaRepository.findAll();
-	}
-	
+
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<Categoria> Incluir(@RequestBody Categoria categoria){
+	public ResponseEntity<Categoria> Incluir(@Valid @RequestBody Categoria categoria, HttpServletResponse response) {
 		Categoria categoriaSalva = categoriaRepository.save(categoria);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{codigo}")
 				.buildAndExpand(categoriaSalva.getCodigo()).toUri();
-		/**response.setHeader("Location", uri.toASCIIString());*/
-		
-		return ResponseEntity.created(uri).body(categoriaSalva);
+		response.setHeader("Location", uri.toASCIIString());
+		// return ResponseEntity.created(uri).body(categoriaSalva);
+		return null;
 	}
+
+	@GetMapping({ "/list" })
 	
-	@GetMapping
-	public Optional<Categoria> buscaPeloCodigo(@PathVariable Long codigo) {
-		return categoriaRepository.findById(codigo);
+	
+	public List<Categoria> listar() {
+		return categoriaRepository.findAll();
 	}
-	
+
+	@GetMapping("/{codigo}")
+	public Categoria buscaPeloCodigo(@PathVariable Long codigo) {
+		return categoriaRepository.findByCodigo(codigo);
+	}
+
 }

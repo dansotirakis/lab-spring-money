@@ -6,4 +6,6 @@ import com.example.money.api.model.Categoria;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
+	Categoria findByCodigo(Long codigo);
+
 }
