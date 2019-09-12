@@ -1,9 +1,10 @@
-CREATE TABLE apimoney.categoria (
-	codigo INT(20) PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE categoria (
+	codigo BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO categoria (nome) values ('lazer');
-INSERT INTO categoria (nome) values ('alimentação');
-INSERT INTO categoria (nome) values ('supermercado');
+INSERT INTO categoria (nome) values ('Lazer');
+INSERT INTO categoria (nome) values ('Alimentação');
+INSERT INTO categoria (nome) values ('Supermercado');
+INSERT INTO categoria (nome) values ('Farmácia');
 INSERT INTO categoria (nome) values ('Outros');

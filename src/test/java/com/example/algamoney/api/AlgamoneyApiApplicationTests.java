@@ -1,4 +1,4 @@
-package com.example.money.api;
+package com.example.algamoney.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MoneyApiApplicationTests {
+public class AlgamoneyApiApplicationTests {
 
 	@Test
 	public void contextLoads() {
