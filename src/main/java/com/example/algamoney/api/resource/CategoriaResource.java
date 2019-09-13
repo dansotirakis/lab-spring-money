@@ -43,6 +43,7 @@ public class CategoriaResource {
 
 	@Autowired
 	private CategoriaService categoriaService;
+	
 	@GetMapping
 	public List<Categoria> listar() {
 		return categoriaRepository.findAll();
