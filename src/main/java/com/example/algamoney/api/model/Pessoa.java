@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /* 
  *	@author Damianos Sotirakis
  * 
@@ -57,6 +59,11 @@ public class Pessoa {
 		this.ativo = ativo;
 	}
 
+	@JsonIgnore
+	public Boolean isInativo() {
+		return !this.ativo;
+	}
+	
 	public Endereco getEndereco() {
 		return endereco;
 	}
