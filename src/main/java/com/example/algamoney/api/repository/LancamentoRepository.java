@@ -7,7 +7,7 @@ import com.example.algamoney.api.model.Lancamento;
 /* 
  *	@author Damianos Sotirakis
  * 
- * 	Interface criada para implementação dos métodos de persistencia rest do objeto lancamento
+ * 	Interface criada para utlização dos métodos de persistencia rest do objeto lancamento
  * 
  * */
 

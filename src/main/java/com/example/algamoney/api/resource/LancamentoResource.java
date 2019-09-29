@@ -27,13 +27,14 @@ import com.example.algamoney.api.event.RecursoCriadoEvent;
 import com.example.algamoney.api.exceptionhandler.AlgamoneyExceptionHandler.Erro;
 import com.example.algamoney.api.model.Lancamento;
 import com.example.algamoney.api.repository.LancamentoRepository;
+import com.example.algamoney.api.repository.filter.LancamentoFilter;
 import com.example.algamoney.api.service.LancamentoService;
 import com.example.algamoney.api.service.exception.PessoaInexistenteOuInativaException;
 
 /* 
  *	@author Damianos Sotirakis
  * 
- * 	Classe criada para implementação do controlador rest para o objeto lançamento
+ * 	Classe criada para utilização do controlador rest para o objeto lançamento
  * 
  * */
 
@@ -54,7 +55,7 @@ public class LancamentoResource {
 	private LancamentoService lancamentoService;
 	
 	@GetMapping
-	public List<Lancamento> listar() {
+	public List<Lancamento> Pesquisar(LancamentoFilter lancamentoFilter) {
 		return lancamentoRepository.findAll();
 	}
 	
